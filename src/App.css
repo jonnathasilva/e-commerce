@@ -68,6 +68,7 @@ header .buyUser {
 
 header .buyUser div:nth-child(1) {
   position: relative;
+  cursor: pointer;
 }
 
 header .buyUser div:nth-child(1) .counter {
@@ -324,10 +325,6 @@ main .left .modal .box .Photos.Modal .imgs {
   width: 20%;
 }
 
-.hide {
-  display: none;
-}
-
 main .right {
   width: 40%;
   padding-top: 55px;
@@ -411,4 +408,8 @@ main .right .buttons button:nth-child(2) {
   background-repeat: no-repeat;
   width: 55%;
   cursor: pointer;
+}
+
+.hide {
+  display: none;
 }

@@ -8,19 +8,24 @@ function App() {
 
   const [times, setTimes] = useState();
   const [SUM, setSUM] = useState()
+  const [trash, setTrash] = useState()
 
   function totalValue(e) { setTimes(e); }
 
   function SumFinal(e) { setSUM(e) }
 
+  function OnContents(e) { setTrash(e) }
+
+  function Contents(e) { setTrash(e) }
+
   const value = '125.00'
 
   return (
     <div className="container">
-      <Header summ={SUM} totalValue={times} value={value}></Header>
+      <Header Contents={Contents} trash={trash} summ={SUM} totalValue={times} value={value}></Header>
       <main>
         <Left></Left>
-        <Right SumFinal={SumFinal} totalValue={totalValue} value={value}></Right>
+        <Right trash={trash} OnContents={OnContents} SumFinal={SumFinal} totalValue={totalValue} value={value}></Right>
       </main>
     </div>
   );

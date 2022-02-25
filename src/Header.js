@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Header(props) {
+
+    const [SHOW, setSHOW] = useState(false);
+    const [c, setC] = useState(false)
+
+    function hideTopModal(e) {
+        let target = e.target
+
+        if (target.id === "delete") { props.Contents(c) }
+    }
+
+    function HideTopModal() { SHOW ? setSHOW(false) : setSHOW(true) }
+
 
     return (
         <header>
@@ -16,38 +28,42 @@ function Header(props) {
                     </ul>
                 </nav>
             </div>
-            <div className="buyUser">
+            <div onClick={hideTopModal} className="buyUser">
                 <div>
-                    <div className="counter">{props.totalValue}</div>
-                    <img src="./images/icon-cart.svg" alt="cart" />
+                    <div className={props.trash ? "counter" : "counter hide"}>{props.totalValue}</div>
+                    <img onClick={HideTopModal} src="./images/icon-cart.svg" alt="cart" />
                 </div>
                 <div className="avatar">
                     <img src="./images/image-avatar.png" alt="avatar" />
                 </div>
-                <div className="Modal-buyUser">
+                <div className={SHOW ? "Modal-buyUser" : "Modal-buyUser hide"}>
                     <div className="card">
                         <div className="header">
                             <h2>Cartão</h2>
                         </div>
-                        <div className="contents">
-                            <div className="cardImgs">
-                                <img src="./images/image-product-1-thumbnail.jpg" alt="sapato" />
+
+                        <div className={props.trash ? "contentsTotal" : " contentsTotal hide"}>
+
+                            <div className="contents">
+                                <div className="cardImgs">
+                                    <img src="./images/image-product-1-thumbnail.jpg" alt="sapato" />
+                                </div>
+                                <div className="cardDescription">
+                                    <p>Outono Tênis De Edição Limitada</p>
+                                    <p>
+                                        <small>${props.value}</small>
+                                        <small>x</small>
+                                        <small>{props.totalValue}</small>
+                                        <small>${props.summ}</small>
+                                    </p>
+                                </div>
+                                <div className="delete">
+                                    <img id='delete' src="./images/icon-delete.svg" alt="delete" />
+                                </div>
                             </div>
-                            <div className="cardDescription">
-                                <p>Outono Tênis De Edição Limitada</p>
-                                <p>
-                                    <small>${props.value}</small>
-                                    <small>x</small>
-                                    <small>{props.totalValue}</small>
-                                    <small>${props.summ}</small>
-                                </p>
+                            <div className="Modal-buyUser-button">
+                                <button>confirmar</button>
                             </div>
-                            <div className="delete">
-                                <img src="./images/icon-delete.svg" alt="delete" />
-                            </div>
-                        </div>
-                        <div className="Modal-buyUser-button">
-                            <button>confirmar</button>
                         </div>
                     </div>
                 </div>
