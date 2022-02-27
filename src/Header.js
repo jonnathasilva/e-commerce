@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 function Header(props) {
 
     const [SHOW, setSHOW] = useState(false);
-    const [c, setC] = useState(false)
+    const [c, setC] = useState()
 
     function hideTopModal(e) {
         let target = e.target
 
-        if (target.id === "delete") { props.Contents(c) }
+        if (target.id === "delete") {
+            setC(false)
+            props.Contents(c) }
     }
 
     function HideTopModal() { SHOW ? setSHOW(false) : setSHOW(true) }
