@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Modal from './Modal.js'
+import Carrossel from "./Carrossel.js";
 
 function Left() {
 
@@ -18,6 +19,7 @@ function Left() {
             <div className="PhotographMain">
                 <img src="./images/image-product-1.jpg" alt="" />
             </div>
+            <Carrossel></Carrossel>
             <div className="Photos">
                 <div onClick={onHideModal} className="imgs">
                     <img src="./images/image-product-1-thumbnail.jpg" alt="sapato" />

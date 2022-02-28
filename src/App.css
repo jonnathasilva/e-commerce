@@ -43,6 +43,10 @@ header .menu {
   justify-content: space-between;
 }
 
+header .menu .navbar {
+  display: none;
+}
+
 header .menu nav ul {
   display: flex;
   list-style: none;
@@ -68,6 +72,9 @@ header .buyUser {
 
 header .buyUser div:nth-child(1) {
   position: relative;
+}
+
+header .buyUser div:nth-child(1) img {
   cursor: pointer;
 }
 
@@ -80,6 +87,7 @@ header .buyUser div:nth-child(1) .counter {
   border-radius: 5px;
   padding: 1px 6px;
   font-size: 7px;
+  cursor: pointer;
 }
 
 header .buyUser .avatar {
@@ -196,6 +204,10 @@ main .left .PhotographMain img {
   border-radius: 12px;
 }
 
+main .left .carrossel {
+  display: none;
+}
+
 main .left .Photos {
   display: flex;
   justify-content: space-between;
@@ -229,6 +241,7 @@ main .left .modal .box {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 main .left .modal .box .close {
@@ -243,41 +256,40 @@ main .left .modal .box .close img {
 }
 
 main .left .modal .box .carrossel {
-  position: relative;
-  width: 30vw;
+  width: 33%;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
 }
 
-main .left .modal .box .carrossel::-webkit-scrollbar {
+.carrossel::-webkit-scrollbar {
   display: none;
 }
 
-main .left .modal .box .carrossel .item {
+.carrossel .item {
   margin: 10px;
   width: 390px;
   border-radius: 12px;
   flex: none;
 }
 
-main .left .modal .box .carrossel .imgs img {
+.carrossel .imgs img {
   width: 100%;
   object-fit: cover;
   border-radius: 12px;
 }
 
-main .left .modal .box .carrossel .carrosselButtons {
-  position: fixed;
+.carrossel .carrosselButtons {
+  position: absolute;
   top: 0;
-  width: 30vw;
+  width: 33%;
   height: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-main .left .modal .box .carrossel .carrosselButtons button {
+.carrossel .carrosselButtons button {
   background-color: var(--White);
   border: none;
   border-radius: 50%;
@@ -288,7 +300,7 @@ main .left .modal .box .carrossel .carrosselButtons button {
   justify-content: flex-end;
 }
 
-main .left .modal .box .carrossel .carrosselButtons .previous {
+.carrossel .carrosselButtons .previous {
   background-image: url(../public/images/icon-previous.svg);
   background-size: 10px;
   background-repeat: no-repeat;
@@ -296,13 +308,13 @@ main .left .modal .box .carrossel .carrosselButtons .previous {
   cursor: pointer;
 }
 
-main .left .modal .box .carrossel .carrosselButtons .previous:hover {
+.carrossel .carrosselButtons .previous:hover {
   background-image: url(../public/images/icon-Previouss.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-main .left .modal .box .carrossel .carrosselButtons .next {
+.carrossel .carrosselButtons .next {
   background-image: url(../public/images/icon-next.svg);
   background-size: 10px;
   background-repeat: no-repeat;
@@ -310,7 +322,7 @@ main .left .modal .box .carrossel .carrosselButtons .next {
   cursor: pointer;
 }
 
-main .left .modal .box .carrossel .carrosselButtons .next:hover {
+.carrossel .carrosselButtons .next:hover {
   background-image: url(../public/images/icon-Nextt.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -412,4 +424,110 @@ main .right .buttons button:nth-child(2) {
 
 .hide {
   display: none;
+}
+
+@media (max-width: 790px) {
+  .container {
+    max-width: 1000px;
+  }
+  header {
+    width: 90%;
+    border: none;
+  }
+
+  header .menu {
+    justify-content: flex-start;
+    width: 65%;
+  }
+
+  header .menu .navbar {
+    margin-right: 20px;
+    display: block;
+  }
+
+  header .menu nav {
+    display: none;
+  }
+
+  header .buyUser {
+    width: 20%;
+  }
+
+  header .buyUser .Modal-buyUser {
+    left: 8px;
+    top: 109px;
+    width: calc(100% - 16px);
+    z-index: 10;
+  }
+
+  main {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 0;
+  }
+
+  main .left {
+    width: 100%;
+    position: relative;
+  }
+
+  main .left .Photos {
+    display: none;
+  }
+
+  main .left .PhotographMain {
+    display: none;
+  }
+
+  main .left .carrossel {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  main .left .carrossel .item {
+    width: 100%;
+    margin: 0;
+  }
+
+  main .left .carrossel .item .imgs img {
+    border-radius: 0;
+  }
+
+  .carrossel .carrosselButtons {
+    position: absolute;
+    width: 100%;
+  }
+
+  main .right {
+    width: 90%;
+    margin: auto;
+    padding-top: 10px;
+  }
+
+  main .right .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  main .right .buttons {
+    flex-direction: column;
+  }
+
+  main .right .buttons .theAmount {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  main .right .buttons button:nth-child(2) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  header .buyUser {
+    width: 30%;
+  }
 }

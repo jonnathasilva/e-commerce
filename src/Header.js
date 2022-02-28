@@ -3,12 +3,15 @@ import React, { useState } from 'react'
 function Header(props) {
 
     const [SHOW, setSHOW] = useState(false);
-    const [c, setC] = useState(false)
+    const [c, setC] = useState()
 
     function hideTopModal(e) {
         let target = e.target
 
-        if (target.id === "delete") { props.Contents(c) }
+        if (target.id === "delete") {
+            setC(false)
+            props.Contents(c)
+        }
     }
 
     function HideTopModal() { SHOW ? setSHOW(false) : setSHOW(true) }
@@ -16,7 +19,12 @@ function Header(props) {
 
     return (
         <header>
+
             <div className="menu">
+                <div className="navbar">
+                    <img src="./images/icon-menu.svg" alt="" />
+                    <div className="modalNavBar"></div>
+                </div>
                 <div className="logo"><img src="./images/logo.svg" alt="logo" /></div>
                 <nav>
                     <ul>
