@@ -22,7 +22,7 @@ function Header(props) {
 
             <div className="menu">
                 <div className="navbar">
-                    <img src="./images/icon-menu.svg" alt="" />
+                    <img src="./images/icon-menu.svg" alt="menu" />
                     <div className="modalNavBar"></div>
                 </div>
                 <div className="logo"><img src="./images/logo.svg" alt="logo" /></div>
