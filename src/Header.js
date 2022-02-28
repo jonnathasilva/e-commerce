@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Menu from './Menu.js'
 
 function Header(props) {
 
@@ -20,22 +21,8 @@ function Header(props) {
     return (
         <header>
 
-            <div className="menu">
-                <div className="navbar">
-                    <img src="./images/icon-menu.svg" alt="menu" />
-                    <div className="modalNavBar"></div>
-                </div>
-                <div className="logo"><img src="./images/logo.svg" alt="logo" /></div>
-                <nav>
-                    <ul>
-                        <li>Coleções</li>
-                        <li>Mas</li>
-                        <li>Mulheres</li>
-                        <li>Sobre</li>
-                        <li>Contato</li>
-                    </ul>
-                </nav>
-            </div>
+            <Menu></Menu>
+
             <div onClick={hideTopModal} className="buyUser">
                 <div>
                     <div onClick={HideTopModal} className={props.trash ? "counter" : "counter hide"}>{props.totalValue}</div>
