@@ -38,7 +38,7 @@ function Header(props) {
             </div>
             <div onClick={hideTopModal} className="buyUser">
                 <div>
-                    <div className={props.trash ? "counter" : "counter hide"}>{props.totalValue}</div>
+                    <div onClick={HideTopModal} className={props.trash ? "counter" : "counter hide"}>{props.totalValue}</div>
                     <img onClick={HideTopModal} src="./images/icon-cart.svg" alt="cart" />
                 </div>
                 <div className="avatar">
@@ -48,6 +48,10 @@ function Header(props) {
                     <div className="card">
                         <div className="header">
                             <h2>Cartão</h2>
+                        </div>
+
+                        <div className={props.trash ? "message hide" : "message"}>
+                            <h3>Seu carrinho está vazio.</h3>
                         </div>
 
                         <div className={props.trash ? "contentsTotal" : " contentsTotal hide"}>

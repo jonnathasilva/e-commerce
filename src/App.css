@@ -119,6 +119,12 @@ header .buyUser .Modal-buyUser .card .header {
   border-bottom: 1px solid var(--Grayish-blue);
 }
 
+.message {
+  text-align: center;
+  font-size: x-small;
+  padding: 20px 0;
+}
+
 header .buyUser .Modal-buyUser .card .contents {
   display: flex;
   align-items: center;
